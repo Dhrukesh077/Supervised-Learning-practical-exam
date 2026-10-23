@@ -1,0 +1,184 @@
+{
+  "best_model": "Ridge",
+  "best_params_tuned_xgb": {
+    "colsample_bytree": 0.4033132702741615,
+    "learning_rate": 0.06538248584518043,
+    "max_depth": 2,
+    "min_child_weight": 3,
+    "n_estimators": 718,
+    "reg_lambda": 8.60184018093215,
+    "subsample": 0.6296178606936361
+  },
+  "n_train": 1166,
+  "n_test": 292,
+  "n_features_processed": 196,
+  "removed_outlier_rows": 2,
+  "dropped_sparse_cols": [
+    "Alley",
+    "Fence",
+    "MiscFeature",
+    "PoolQC"
+  ],
+  "ridge_alpha": 10.0,
+  "lasso_alpha": 0.001,
+  "lasso_zeroed": 129,
+  "lasso_total": 196,
+  "cv_best_log_mean": 0.11708580707479435,
+  "cv_best_log_std": 0.0076581159801851605,
+  "comparison": {
+    "Linear Regression": {
+      "RMSE (USD)": 22104.0566669526,
+      "MAE (USD)": 15349.6281831296,
+      "R\u00b2 Score": 0.9115471693,
+      "5-Fold CV RMSE (USD)": 22897.5581872494,
+      "5-Fold CV RMSE (log)": 0.1231143201,
+      "Test RMSE (log)": 0.1240121499,
+      "MAPE %": 8.830789631,
+      "Within \u00b110 %": 69.8630136986,
+      "Training time (s)": 0.0192508698
+    },
+    "Ridge": {
+      "RMSE (USD)": 19762.6002522447,
+      "MAE (USD)": 14241.8099219217,
+      "R\u00b2 Score": 0.9292940539,
+      "5-Fold CV RMSE (USD)": 22654.6295503824,
+      "5-Fold CV RMSE (log)": 0.1170858071,
+      "Test RMSE (log)": 0.1130446599,
+      "MAPE %": 8.3223505208,
+      "Within \u00b110 %": 71.5753424658,
+      "Training time (s)": 0.0428915024
+    },
+    "Lasso": {
+      "RMSE (USD)": 19620.96940338,
+      "MAE (USD)": 14271.4092783482,
+      "R\u00b2 Score": 0.9303038663,
+      "5-Fold CV RMSE (USD)": 22876.3948866189,
+      "5-Fold CV RMSE (log)": 0.1159727971,
+      "Test RMSE (log)": 0.1141752414,
+      "MAPE %": 8.4034910525,
+      "Within \u00b110 %": 71.2328767123,
+      "Training time (s)": 0.2431666851
+    },
+    "Random Forest": {
+      "RMSE (USD)": 22112.6202391973,
+      "MAE (USD)": 15486.2259974095,
+      "R\u00b2 Score": 0.911478619,
+      "5-Fold CV RMSE (USD)": 26838.9834471964,
+      "5-Fold CV RMSE (log)": 0.1354887684,
+      "Test RMSE (log)": 0.1372367272,
+      "MAPE %": 9.7229873973,
+      "Within \u00b110 %": 69.1780821918,
+      "Training time (s)": 4.0401771069
+    },
+    "XGBoost": {
+      "RMSE (USD)": 20409.8962279793,
+      "MAE (USD)": 14665.2803537029,
+      "R\u00b2 Score": 0.9245864546,
+      "5-Fold CV RMSE (USD)": 23628.6012410043,
+      "5-Fold CV RMSE (log)": 0.1208536701,
+      "Test RMSE (log)": 0.1194957491,
+      "MAPE %": 8.6552472505,
+      "Within \u00b110 %": 70.8904109589,
+      "Training time (s)": 1.1492540836
+    },
+    "XGBoost (tuned)": {
+      "RMSE (USD)": 20349.9763711343,
+      "MAE (USD)": 14521.2041283176,
+      "R\u00b2 Score": 0.9250286063,
+      "5-Fold CV RMSE (USD)": 23113.9428118247,
+      "5-Fold CV RMSE (log)": 0.11711092,
+      "Test RMSE (log)": 0.1152835645,
+      "MAPE %": 8.4944715676,
+      "Within \u00b110 %": 70.2054794521,
+      "Training time (s)": 54.9511301517
+    }
+  },
+  "cv_usd_std": {
+    "Linear Regression": 2396.210920228825,
+    "Ridge": 2742.1877257772508,
+    "Lasso": 2149.9662895132856,
+    "Random Forest": 2092.931388448593,
+    "XGBoost": 2971.960360257981,
+    "XGBoost (tuned)": 1794.1274699732478
+  },
+  "top5_permutation": [
+    "GrLivArea",
+    "OverallQual",
+    "OverallCond",
+    "TotalBsmtSF",
+    "Neighborhood"
+  ],
+  "whatif": {
+    "+1 OverallQual point (capped at 10)": {
+      "mean change %": 4.4643910292,
+      "median change %": 4.495177629,
+      "mean change $": 7977.6616968306
+    },
+    "OverallQual \u2192 10 (Excellent)": {
+      "mean change %": 18.535929739,
+      "median change %": 19.2298396427,
+      "mean change $": 29099.9475840019
+    },
+    "OverallQual \u2192 5 (Average)": {
+      "mean change %": -4.8587738995,
+      "median change %": -4.301809785,
+      "mean change $": -12276.0098188439
+    },
+    "+500 sq ft of living area": {
+      "mean change %": 12.3244533977,
+      "median change %": 11.6954474318,
+      "mean change $": 20235.4950385057
+    },
+    "house 20 years older": {
+      "mean change %": -2.069651134,
+      "median change %": -2.0696501336,
+      "mean change $": -3736.6123655584
+    },
+    "+1 garage bay": {
+      "mean change %": 1.6016855967,
+      "median change %": 1.6016848225,
+      "mean change $": 2891.732866515
+    },
+    "KitchenQual \u2192 Excellent": {
+      "mean change %": 3.2296581455,
+      "median change %": 2.2266000555,
+      "mean change $": 5102.0360628398
+    },
+    "+1 OverallCond point (capped at 9)": {
+      "mean change %": 4.2325179067,
+      "median change %": 4.2617055796,
+      "mean change $": 7633.7476717805
+    },
+    "+500 sq ft of basement": {
+      "mean change %": 7.0937365332,
+      "median change %": 7.0324133351,
+      "mean change $": 12597.5405443273
+    },
+    "moved to priciest neighbourhood (NridgHt)": {
+      "mean change %": 7.4068281931,
+      "median change %": 7.0571287732,
+      "mean change $": 11416.0656429555
+    },
+    "moved to cheapest neighbourhood (MeadowV)": {
+      "mean change %": -6.1322736712,
+      "median change %": -6.4378721353,
+      "mean change $": -12781.2310501369
+    }
+  },
+  "residual_stats": {
+    "mean": -0.0017459433938960172,
+    "std": 0.1132252213441383,
+    "skew": -1.0831568400903953,
+    "exkurt": 4.781898988073935,
+    "shapiro_p": 2.0010204021754043e-09,
+    "n_gt3": 3,
+    "n_gt2": 13
+  },
+  "skew_raw": 1.880940746034036,
+  "skew_log": 0.12122191311528359,
+  "median_price": 167050.00000000006,
+  "q10v5": 24.589446512119242,
+  "nb_swing": 14.423595380877982,
+  "top_neigh": "NridgHt",
+  "bottom_neigh": "MeadowV"
+}
